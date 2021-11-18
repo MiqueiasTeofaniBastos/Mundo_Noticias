@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Detalhes_Noticia">
+
+
+    <ImageView
+        android:id="@+id/img_Noticia"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/ic_baseline_image_24"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="2sp">
+        <TextView
+            android:id="@+id/txt_Categoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="2sp">
+        <TextView
+            android:id="@+id/txt_Titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="2sp">
+        <TextView
+            android:id="@+id/txt_Conteudo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+       />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="2sp">
+        <TextView
+            android:id="@+id/txt_Autor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="2sp">
+        <TextView
+            android:id="@+id/txt_Publicacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

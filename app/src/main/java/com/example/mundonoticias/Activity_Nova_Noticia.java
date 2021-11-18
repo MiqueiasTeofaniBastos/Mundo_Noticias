@@ -48,6 +48,7 @@ public class Activity_Nova_Noticia extends AppCompatActivity implements View.OnC
     private String Tabela = "Noticias";
     private ArrayList<Noticia> Lista_Noticias = new ArrayList<>();
     private ArrayAdapter<Noticia> Lista_Noticias_Adapter;
+    private ArrayAdapter<String> CatAdapterName;
 
     private static final int PICK_FROM_GALLARY = 1;
     private ImageView img_Noticia;
@@ -84,7 +85,9 @@ public class Activity_Nova_Noticia extends AppCompatActivity implements View.OnC
         txt_Autor.setText(ConnFirebase.currentUser.getEmail());
     }
     private void Popular_Obj_Noticia(){
-        noticia.setNoticiaUID(UUID.randomUUID().toString());
+        if(noticia.getNoticiaUID()=="" || noticia.getNoticiaUID() == null){
+            noticia.setNoticiaUID(UUID.randomUUID().toString());
+        }
         noticia.setCategoria(spn_Categoria.getSelectedItem().toString());
         noticia.setAutor(ConnFirebase.currentUser.getEmail());
         noticia.setConteudo(txt_Corpo.getText().toString());
@@ -129,6 +132,7 @@ public class Activity_Nova_Noticia extends AppCompatActivity implements View.OnC
                         Lista_Categorias);
                 CategoriaAdapterName.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spn_Categoria.setAdapter(CategoriaAdapterName);
+                CatAdapterName = CategoriaAdapterName;
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -175,6 +179,10 @@ public class Activity_Nova_Noticia extends AppCompatActivity implements View.OnC
                 txt_Titulo.setText(noticia.getTitulo());
                 txt_Corpo.setText(noticia.getConteudo());
                 txt_Autor.setText(noticia.getAutor());
+                if (noticia.getCategoria() != null) {
+                    int spinnerPosition = CatAdapterName.getPosition(noticia.getCategoria());
+                    spn_Categoria.setSelection(spinnerPosition);
+                }
                 Bitmap img = DbBitmapUtility.convert(noticia.getNoticiaImg());
                 img_Noticia.setImageBitmap(img);
                 break;

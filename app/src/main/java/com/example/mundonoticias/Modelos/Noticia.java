@@ -77,7 +77,12 @@ public class Noticia {
     }
 
     public String Resumo_Noticia(){
-        return this.getConteudo().substring(0,150)+"...";
+        try{
+            String result = getConteudo().substring(0,150)+"...";
+            return result;
+        }catch (Exception ex){
+            return getConteudo();
+        }
     }
 
     public String Date_String(Date date){

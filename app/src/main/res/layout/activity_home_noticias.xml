@@ -10,16 +10,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <TextView
-            android:gravity="center_horizontal"
+        <Spinner
+            android:id="@+id/spn_Categoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Atualizado"/>
+            android:textSize="5sp"/>
 
-        <Space
-            android:gravity="center_horizontal"
-            android:layout_width="150sp"
-            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/btn_Nova_Noticia"

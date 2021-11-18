@@ -36,7 +36,7 @@ public class NoticiaListAdapter extends ArrayAdapter<Noticia> {
 
 
         txt_1.setText("Titulo: "+noticia.getTitulo().toString());
-        txt_1.setText("Categoria: "+noticia.getCategoria().toString());
+        txt_2.setText("Categoria: "+noticia.getCategoria().toString());
         Bitmap Image = DbBitmapUtility.convert(noticia.getNoticiaImg());
         imagem.setImageBitmap(Image);
 
